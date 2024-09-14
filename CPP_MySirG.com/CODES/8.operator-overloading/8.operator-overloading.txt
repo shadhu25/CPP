@@ -1,0 +1,9 @@
+Operator Overloading
+    When an operator is overloaded with multiple jobs, it is known as operator overloading.
+    It is a way to implement compile time polymorphism.
+
+Rules to remember
+    If it is a valid operator in  language.
+    If it is preceded by operator keyword.
+    You can not Overload sizeof() and ?: operator
+    

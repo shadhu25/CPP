@@ -1,0 +1,143 @@
+Understand the need of Inheritance
+    Class is used to describe properties and behavior of an object.
+    Property names and values
+    Behaviour means action
+
+    Lets us assume that we want to represent a car.
+                    CAR
+        Properties                      Methods
+    price                               setPrice()
+    Fuel type                           SetFuelType()
+    engine                              setEngine()
+    colour                              setColour()
+    capacity                            setCapacity()
+                                        getPrice()
+                                        getFuelType()
+                                        getEngine()
+                                        getColour()
+                                        getCapacity()
+                    sportCar
+        Properties                      Methods
+    price                               setPrice()
+    Fuel type                           SetFuelType()
+    engine                              setEngine()
+    colour                              setColour()
+    capacity                            setCapacity()
+    alarm                               getPrice()
+    navigator                           getFuelType()
+    safGaurd                            getEngine()
+                                        getColour()
+                                        getCapacity()
+                                        SetAlrm()
+                                        SetNavigator()
+                                        setSafeGaurd()
+                                        getAlarm()
+                                        getSafeGaurd()
+
+Inheritance
+    It is a process of inheriting properties and behaviors of existing class into a new class.
+    Existing class = Old class = parent class = base class
+    New class = Child class = Derived class
+
+Syntax
+    
+    class Base-class{
+
+    };
+    class Derived-class: visibility-mode Base-class{
+
+    };
+
+Type of Inheritance
+    Single Inheritance
+    Multilevel Inheritance
+    Multiple Inheritance
+    Hierarchical Inheritance
+    Hybrid Inheritance
+
+Visibilyty Modes
+    Type of users of class
+        -User 1 will create Object of your class
+        -User 2 will derived class from your class
+    Availability Vs Accessibility
+
+Relation 
+    Banana is a fruit
+    Rectangle is a quadrilateral
+
+    Association
+    -Aggregation
+    -Composition
+    -Inheritance
+
+Public Inheritance
+    is a relationship is always implemented as a public inheritance.
+    
+Example Program
+
+
+// Inheritance: Availability & Accessibility
+#include<iostream>
+using namespace std;
+class A{
+    private:
+        int a;
+        float b;
+    protected:
+        void setData(int x, float y){
+            a=x; b=y;
+        }
+    public:
+        void Display(){
+            cout<<"a = "<<a<<" b = "<<b<<endl;
+        }
+};
+
+class B1: private A{ 
+    /*
+        In class B1(Accessibility)
+            private members is not Accessible of class A
+            protected members of class A will act as private member in class B1
+            Public member of class A will act as private member in class B1
+        for user 1(object) of class B1 
+            nothing is accessible of class A
+            only public members is accessible of class B1 
+        for user 2(child class) of class B1
+            nothing is accessible of class A
+            only public and protected members is accessible of class B1 
+    */
+};
+
+class B2: protected A{
+    /*
+        In class B2(Accessibility)
+            private members is not Accessible of class A 
+            protected members of class A will act as protected member in class B2
+            Public member of class A will act as protected member in class B2
+        for user 1(object) of class B2 
+            nothing is accessible of class A
+            only public members is accessible of class B2 
+        for user 2(child class) of class B2
+            only protected and public members is accessible of class A
+            only protected and public members is accessible of class B2
+    */
+};
+
+class B3: public A{
+    /*
+        In class B3(Accessibility)
+            private members is not Accessible of class A 
+            protected members of class A will act as protected member in class B3
+            Public members of class A will act as public member in class B3
+        for user 1(object) of class B3
+            only public members is accessible of class A
+            only public members is accessible of class B3 
+        for user 2(child class) of class B2
+            only protected and public members is accessible of class A
+            only protected and public members is accessible of class B3 
+    */
+};
+
+int main(){
+
+}
